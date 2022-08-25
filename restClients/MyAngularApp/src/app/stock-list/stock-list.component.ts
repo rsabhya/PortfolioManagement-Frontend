@@ -15,4 +15,5 @@ export class StockListComponent {
   constructor(StockService: StockService) { 
     this.Stocks = StockService.getStocks(); 
   }
+
 }

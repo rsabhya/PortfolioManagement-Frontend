@@ -6,13 +6,15 @@
                 {{ stock.ticker }}
             </a>
             <span class="caption-right">
-                {{ stock.price | currency:'GBP':'symbol'}}
+                {{ stock.price | currency:'USD':'symbol'}}
             </span>
         </h2>
     </div>
 
     <div class="caption-normal">Amount: {{ stock.amount }}</div>
-    <div class="caption-normal">Transaction Type: {{ stock.transactionType }}</div>
+    <div class="caption-normal"> 
+        <button (click)="remove(stock.id)">BUY</button>
+</div>
 
 </div>
 

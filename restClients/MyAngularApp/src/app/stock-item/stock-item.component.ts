@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Stock } from '../stock'
+import { StockService } from '../stock.service';
 
 @Component({
   selector: 'app-stock-item',
@@ -10,10 +11,18 @@ export class StockItemComponent implements OnInit {
 
   @Input() 
   stock!: Stock;
-
   imageUrl!: string;
 
+  constructor(private stockService: StockService) {}
+
+
   ngOnInit() {
-      this.imageUrl = `assets/${this.stock.id}.jpg`;
+
+  }
+
+   // Remove the item with the specified id.
+   remove(id: number) {
+    this.stockService.deleteStock(id);
+    window.location.reload();
   }
 }

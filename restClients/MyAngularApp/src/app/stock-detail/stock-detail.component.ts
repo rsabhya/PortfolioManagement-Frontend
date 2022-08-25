@@ -26,10 +26,10 @@ export class StockDetailComponent implements OnInit, OnDestroy {
         error: (_:any)  => console.log("Error")
       });
 
-      // update the specified stock, from the service.
-      this.stockService.updateStock(stock)
-      this.stockService.putStockToHistory(stock); 
-      this.stockService.deleteStock(6);
+      // // update the specified stock, from the service.
+      // this.stockService.updateStock(stock)
+      // this.stockService.putStockToHistory(stock); 
+      // this.stockService.deleteStock(6);
     });
   }
 
