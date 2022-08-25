@@ -37,6 +37,22 @@ export class StockHistoryService {
       console.log(error + "error here for sh")});
   }
 
+  postStockToHistory(stockHistory: StockHistory) {
+    const body = 
+    {
+      id : stockHistory.id,
+      ticker :  stockHistory.ticker,
+      price : stockHistory.price,
+      amount : stockHistory.amount,
+      is_sold : stockHistory.is_sold  
+    }
+   // let body: StockHistory = new StockHistory(1, 'AAPL', 171.40, 4238, "BUY")
+    this.http.post<any>(this.baseUrl, body).subscribe((data) => {
+      console.log(data + " data for stock history")
+    }, (error) => {
+      console.log(error + "error here for sh")});
+  }
+
   deleteStockHistory(id: Number) {
     this.http.delete<any>(`${this.baseUrl}/${id}`).subscribe((data) => {
       console.log(data + "data")

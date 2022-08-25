@@ -6,9 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { AnotherComponent } from './another/another.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { CsvPipe } from './csv.pipe';
 import { StockListComponent } from './stock-list/stock-list.component';
 import { StockHistoryListComponent } from './stockHistory-list/stockHistory-list.component';
@@ -22,9 +20,7 @@ import { StockDetailComponent } from './stock-detail/stock-detail.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    AnotherComponent,
     PagenotfoundComponent,
-    ShoppingcartComponent,
     CsvPipe,
     StockListComponent,
     StockListHeaderComponent,

@@ -39,10 +39,6 @@ export class StockService {
   }
 
 
-
-  
- 
-
   deleteStock(id: Number) {
    // let body: Stock = new Stock(1, 'AAPL', 171.40, 4238, "BUY")
     this.http.delete<any>(`${this.baseUrl}/${id}`).subscribe((data) => {
