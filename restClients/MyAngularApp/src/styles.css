@@ -1,0 +1,22 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0px;
+}
+
+nav {
+    background-color: #1199ff;
+    padding: 12px 5px;
+    margin-bottom: 1px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+nav a:hover {
+    color: #1199ff;
+    background-color: white;
+    text-decoration: none;
+}

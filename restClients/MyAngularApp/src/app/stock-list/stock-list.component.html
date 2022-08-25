@@ -1,0 +1,9 @@
+<app-stock-list-header></app-stock-list-header>
+
+<div class="stock-item-container">
+    <div *ngFor="let stock of Stocks | async">
+        <app-stock-item [stock]="stock"></app-stock-item>
+    </div>
+</div>
+
+<app-stock-list-footer></app-stock-list-footer>

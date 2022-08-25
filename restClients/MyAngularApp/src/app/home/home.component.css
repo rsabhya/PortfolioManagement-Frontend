@@ -1,0 +1,18 @@
+img {
+    width: 100%;
+    height: auto;
+}
+
+div.centered {
+    color: white;
+    font-size: 6em;
+    font-weight: 700;
+    opacity: 70%;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+

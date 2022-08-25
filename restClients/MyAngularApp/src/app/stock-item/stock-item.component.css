@@ -1,0 +1,26 @@
+.stock-item {
+    padding: 10px;
+    background-color: steelblue;
+    color: white;
+}
+
+.stock-item img {
+    width: 100%;
+}
+
+.stock-item div {
+    margin-bottom: 20px;
+}
+
+.stock-item .caption-left {
+    float: left;
+}
+
+.stock-item .caption-right {
+    float: right;
+}
+
+.stock-item .caption-normal {
+    clear: both;
+}
+

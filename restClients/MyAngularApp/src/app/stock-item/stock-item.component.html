@@ -1,0 +1,17 @@
+<div class="stock-item">
+  
+    <div>
+        <h2>
+            <a class="caption-left" [routerLink]="['/stockDetail', stock.id]">
+                {{ stock.ticker }}
+            </a>
+            <span class="caption-right">
+                {{ stock.price | currency:'GBP':'symbol'}}
+            </span>
+        </h2>
+    </div>
+
+    <div class="caption-normal">Amount: {{ stock.amount }}</div>
+    <div class="caption-normal">Transaction Type: {{ stock.transactionType }}</div>
+
+</div>

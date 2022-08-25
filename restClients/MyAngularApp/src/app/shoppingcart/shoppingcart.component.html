@@ -1,0 +1,84 @@
+<h1>Add item to shopping cart</h1>
+
+<form #f="ngForm" (ngSubmit)="add(f)">
+    <p>
+        <label>Product</label>
+        <select [(ngModel)]="selectedProduct" name="product">
+            <option *ngFor="let product of products" [ngValue]="product">{{product.title}}</option>
+        </select>
+    </p>
+
+    <p>
+        <label>Price</label>
+        <input type="number" [value]="selectedProduct?.price" readonly>
+    </p>
+
+    <p>
+        <label>Quantity</label>
+        <input type="number" [(ngModel)]="quantity" name="quantity" required>
+    </p>
+
+    <p>
+        <button type="submit" [disabled]="!f.valid">Add</button>
+    </p>
+</form>
+
+
+<div *ngIf="items.length > 0; then populatedCartTemplate else emptyCartTemplate"></div>
+
+<ng-template #populatedCartTemplate>
+	<h1>Your Shopping Cart [{{items.length | i18nPlural: messageMapping}}]</h1>
+
+    <p>
+		Display items 
+		from <input type="number" [(ngModel)]="sliceStart"> 
+        to <input type="number" [(ngModel)]="sliceEnd">
+	</p>
+
+	<div *ngFor="let item of items | slice:sliceStart:sliceEnd" class="itemPanel" [class.highvalue]="item.quantity * item.price > 10000">
+		
+		<h2>{{item.title | uppercase}}</h2>
+
+		<p>
+			<label>Quantity</label>
+			<input type="number" [(ngModel)]="item.quantity">
+		</p>
+		
+		<p>
+			<label>Unit price</label>
+			<span>{{item.price | currency:'GBP':'symbol'}}</span>
+		</p>
+
+		<p>
+			<label>Line cost</label>
+			<span>{{ lineCost(item.id) | currency:'GBP':'symbol' }}</span>
+		</p>
+
+        <p>
+            <label>Timestamp</label>
+            <span>{{item.timestamp | date}} [{{item.timestamp | date:'hh:mm:ss a'}}]</span>
+        </p>
+        
+        <p>
+            <label>Percent cost</label>
+            <span>{{ (lineCost(item.id)/totalCartCost()) | percent:'1.2-2'}}</span>
+        </p>
+
+        <p>
+            <label>Item as CSV</label>
+            <span>{{item | csv:'id':'title':'quantity':'price'}}</span>
+        </p>
+
+		<button (click)="remove(item.id)">Remove</button>
+		
+	</div>	
+
+	<div>
+        <h2>Total cart cost: &pound;{{totalCartCost()}}</h2>
+    </div>
+
+</ng-template>
+
+<ng-template #emptyCartTemplate>
+	<h1>Empty Shopping Cart</h1>
+</ng-template>

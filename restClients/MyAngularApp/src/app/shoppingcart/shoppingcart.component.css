@@ -1,0 +1,26 @@
+.itemPanel {
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: steelblue;
+    color: white;
+}
+
+.itemPanel.highvalue {
+    margin-bottom: 10px;
+    background-color: coral;
+    color: white;
+}
+
+input[type=number] {
+    width: 75px;
+    text-align: right;
+}
+
+label {
+    width: 120px;
+    float: left;
+}
+
+span {
+    font-weight: bold;
+}
