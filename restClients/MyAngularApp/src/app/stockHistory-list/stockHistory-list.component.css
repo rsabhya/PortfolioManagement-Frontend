@@ -1,0 +1,9 @@
+.stockHistory-item-container {
+    width: 100%
+}
+
+.stockHistory-item-container > * {
+    width: 30%;
+    display: inline-block;
+    margin: 10px;
+}

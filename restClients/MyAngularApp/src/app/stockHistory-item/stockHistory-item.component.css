@@ -1,0 +1,26 @@
+.stockHistory-item {
+    padding: 10px;
+    background-color: steelblue;
+    color: white;
+}
+
+.stockHistory-item img {
+    width: 100%;
+}
+
+.stockHistory-item div {
+    margin-bottom: 20px;
+}
+
+.stockHistory-item .caption-left {
+    float: left;
+}
+
+.stockHistory-item .caption-right {
+    float: right;
+}
+
+.stockHistory-item .caption-normal {
+    clear: both;
+}
+

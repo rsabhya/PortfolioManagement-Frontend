@@ -5,6 +5,8 @@ import { AnotherComponent } from './another/another.component'
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component'
 import { StockListComponent } from './stock-list/stock-list.component'
 import { StockDetailComponent } from './stock-detail/stock-detail.component'
+
+import { StockHistoryListComponent } from './stockHistory-list/stockHistory-list.component'
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component'
 
 const routes: Routes = [
@@ -12,6 +14,7 @@ const routes: Routes = [
   { path: 'another', component: AnotherComponent },
   { path: 'shoppingcart', component: ShoppingcartComponent },
   { path: 'stocklist', component: StockListComponent },
+  { path: 'stockHistorylist', component: StockHistoryListComponent },
   { path: 'stockDetail/:id', component: StockDetailComponent}, 
   { path: '**', component: PagenotfoundComponent },
 ];

@@ -1,0 +1,20 @@
+<div class="stockHistory-item">
+  
+    <div>
+        <h2>
+            <a class="caption-left" [routerLink]="['/stockHistoryDetail', stockHistory.id]">
+                {{ stockHistory.ticker }}
+            </a>
+            <span class="caption-right">
+                {{ stockHistory.price | currency:'USD':'symbol'}}
+            </span>
+        </h2>
+    </div>
+
+    <div class="caption-normal">Amount: {{ stockHistory.amount }}</div>
+    <div class="caption-normal"> 
+        <button (click)="remove(stockHistory.id)">BUY</button>
+</div>
+
+</div>
+

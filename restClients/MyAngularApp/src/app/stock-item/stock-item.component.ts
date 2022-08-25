@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Stock } from '../stock'
+import { StockHistory } from '../stockHistory'
 import { StockService } from '../stock.service';
+import { StockHistoryService } from '../stockHistory.service';
 
 @Component({
   selector: 'app-stock-item',
@@ -13,7 +15,7 @@ export class StockItemComponent implements OnInit {
   stock!: Stock;
   imageUrl!: string;
 
-  constructor(private stockService: StockService) {}
+  constructor(private stockService: StockService, private stockHistoryService: StockHistoryService) {}
 
 
   ngOnInit() {
@@ -21,8 +23,10 @@ export class StockItemComponent implements OnInit {
   }
 
    // Remove the item with the specified id.
-   remove(id: number) {
-    this.stockService.deleteStock(id);
+   remove(stock: Stock) {
+    let sh: StockHistory = new StockHistory(stock.id, stock.ticker, stock.price, stock.amount, 0)
+    this.stockService.deleteStock(stock.id);
+    this.stockHistoryService.putStockToHistory(sh);
     window.location.reload();
   }
 }

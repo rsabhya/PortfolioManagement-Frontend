@@ -1,0 +1,9 @@
+<app-stock-list-header></app-stock-list-header>
+
+<div class="stockHistory-item-container">
+    <div *ngFor="let stockHistory of StockHistorys | async">
+        <app-stockHistory-item [stockHistory]="stockHistory"></app-stockHistory-item>
+    </div>
+</div>
+
+<app-stock-list-footer></app-stock-list-footer>
