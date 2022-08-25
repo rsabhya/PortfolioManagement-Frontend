@@ -18,12 +18,18 @@ export class StockDetailComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscriberParams = this.route.paramMap.subscribe((paramMap: any) => {
       let id: number = +paramMap.get('id');   
+      let stock: Stock = new Stock(1, 'AAPL', 171.40, 4, "BUY")
 
       // Get the specified stock, from the service.
       this.stockService.getStockById(id).subscribe({
         next: (data:any) => this.stock = data,
         error: (_:any)  => console.log("Error")
       });
+
+      // update the specified stock, from the service.
+      this.stockService.updateStock(stock)
+      this.stockService.putStockToHistory(stock); 
+      this.stockService.deleteStock(6);
     });
   }
 
