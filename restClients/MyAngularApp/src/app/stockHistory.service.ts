@@ -28,7 +28,8 @@ export class StockHistoryService {
       ticker :  stockHistory.ticker,
       price : stockHistory.price,
       amount : stockHistory.amount,
-      is_sold : stockHistory.is_sold  
+      is_sold : stockHistory.is_sold, 
+      transaction_date: stockHistory.transaction_date 
     }
    // let body: StockHistory = new StockHistory(1, 'AAPL', 171.40, 4238, "BUY")
     this.http.put<any>(this.baseUrl, body).subscribe((data) => {
@@ -44,7 +45,8 @@ export class StockHistoryService {
       ticker :  stockHistory.ticker,
       price : stockHistory.price,
       amount : stockHistory.amount,
-      is_sold : stockHistory.is_sold  
+      is_sold : stockHistory.is_sold, 
+      transaction_date: stockHistory.transaction_date   
     }
    // let body: StockHistory = new StockHistory(1, 'AAPL', 171.40, 4238, "BUY")
     this.http.post<any>(this.baseUrl, body).subscribe((data) => {

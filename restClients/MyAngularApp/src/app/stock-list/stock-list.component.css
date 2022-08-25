@@ -4,6 +4,6 @@
 
 .stock-item-container > * {
     width: 30%;
-    display: inline-block;
+    display: block;
     margin: 10px;
 }

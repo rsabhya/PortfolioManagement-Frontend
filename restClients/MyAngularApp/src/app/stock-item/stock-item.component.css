@@ -1,15 +1,16 @@
-.stock-item {
-    padding: 10px;
-    background-color: steelblue;
-    color: white;
+/* * {
+    font-size: 15px;
 }
 
-.stock-item img {
-    width: 100%;
+.stock-item {
+    padding: 0.5em;
+    background-color: steelblue;
+    color: white;
+    
 }
 
 .stock-item div {
-    margin-bottom: 20px;
+    margin-bottom: 1em;
 }
 
 .stock-item .caption-left {
@@ -22,5 +23,29 @@
 
 .stock-item .caption-normal {
     clear: both;
+    padding: 0em;
+    margin: 0em;
 }
+ */
 
+ .column {
+    vertical-align: middle;
+    align-self: center;
+  }
+  
+  .stock-item{
+    width: 100%;
+    margin: 0;
+    background-color: steelblue;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+
+  .stock-item:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

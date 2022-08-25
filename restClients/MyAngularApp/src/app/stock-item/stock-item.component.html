@@ -1,20 +1,19 @@
+
 <div class="stock-item">
-  
-    <div>
+    <div class="column">
         <h2>
-            <a class="caption-left" [routerLink]="['/stockDetail', stock.id]">
+            <a [routerLink]="['/stockDetail', stock.id]">
                 {{ stock.ticker }}
             </a>
-            <span class="caption-right">
-                {{ stock.price | currency:'USD':'symbol'}}
-            </span>
         </h2>
     </div>
-
-    <div class="caption-normal">Amount: {{ stock.amount }}</div>
-    <div class="caption-normal"> 
+    <div class="column">
+        {{ stock.price | currency:'USD':'symbol'}}
+    </div>
+    <div class="column">
+        Amount: {{ stock.amount }}
+    </div>
+    <div class="column">
         <button (click)="remove(stock)">BUY</button>
-</div>
-
-</div>
-
+    </div>
+  </div>

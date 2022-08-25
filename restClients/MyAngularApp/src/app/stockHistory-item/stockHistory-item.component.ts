@@ -24,8 +24,8 @@ export class StockHistoryItemComponent implements OnInit {
 
    // update the is_sold --> selling
    update(sh: StockHistory) {
-    let new_sh: StockHistory = new StockHistory(sh.id, sh.ticker, sh.price, sh.amount, 1)
-    let new_sh_2: StockHistory = new StockHistory(100-sh.id, sh.ticker, sh.price, sh.amount, 1)
+    let new_sh: StockHistory = new StockHistory(sh.id, sh.ticker, sh.price, sh.amount, 1, new Date())
+    let new_sh_2: StockHistory = new StockHistory(100-sh.id, sh.ticker, sh.price, sh.amount, 1, new Date())
     this.stockHistoryService.putStockToHistory(new_sh);
     this.stockHistoryService.postStockToHistory(new_sh_2);
     window.location.reload();
