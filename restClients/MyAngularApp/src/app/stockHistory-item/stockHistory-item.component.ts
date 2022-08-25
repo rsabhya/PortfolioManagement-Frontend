@@ -20,9 +20,19 @@ export class StockHistoryItemComponent implements OnInit {
 
   }
 
-   // Remove the item with the specified id.
-   remove(id: number) {
-    this.stockHistoryService.deleteStockHistory(id);
+   // update the is_sold
+   update(sh: StockHistory) {
+    let new_sh: StockHistory = new StockHistory(sh.id, sh.ticker, sh.price, sh.amount, 1)
+    this.stockHistoryService.putStockToHistory(new_sh);
     window.location.reload();
   }
+
+  isSold(is_sold: number) {
+    if(is_sold == 0) {
+      return true
+    } 
+    return false
+  }
+
+ 
 }

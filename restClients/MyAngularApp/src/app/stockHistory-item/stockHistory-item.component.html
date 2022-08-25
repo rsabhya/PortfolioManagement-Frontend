@@ -10,10 +10,12 @@
             </span>
         </h2>
     </div>
-
+   
     <div class="caption-normal">Amount: {{ stockHistory.amount }}</div>
     <div class="caption-normal"> 
-        <button (click)="remove(stockHistory.id)">BUY</button>
+        <div>
+            <button (click)="update(stockHistory)" *ngIf="isSold(stockHistory.is_sold)">SELL</button>
+        </div>
 </div>
 
 </div>

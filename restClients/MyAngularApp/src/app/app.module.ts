@@ -11,9 +11,11 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { CsvPipe } from './csv.pipe';
 import { StockListComponent } from './stock-list/stock-list.component';
+import { StockHistoryListComponent } from './stockHistory-list/stockHistory-list.component';
 import { StockListHeaderComponent } from './stock-list-header/stock-list-header.component';
 import { StockListFooterComponent } from './stock-list-footer/stock-list-footer.component';
 import { StockItemComponent } from './stock-item/stock-item.component';
+import { StockHistoryItemComponent } from './stockHistory-item/stockHistory-item.component';
 import { StockDetailComponent } from './stock-detail/stock-detail.component';
 
 @NgModule({
@@ -26,8 +28,10 @@ import { StockDetailComponent } from './stock-detail/stock-detail.component';
     CsvPipe,
     StockListComponent,
     StockListHeaderComponent,
+    StockHistoryListComponent,
     StockListFooterComponent,
     StockItemComponent,
+    StockHistoryItemComponent, 
     StockDetailComponent,
   ],
   imports: [
