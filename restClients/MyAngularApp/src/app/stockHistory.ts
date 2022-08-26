@@ -5,6 +5,6 @@ export class StockHistory {
         public price: number,
         public amount: number,
         public is_sold: number, 
-        public transaction_date: Date) {
+        public transaction_date: String) {
     }
 }

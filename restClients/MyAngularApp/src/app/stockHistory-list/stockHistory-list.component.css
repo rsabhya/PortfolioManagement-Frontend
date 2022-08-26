@@ -1,9 +1,20 @@
+
+
+html {
+    background-color: #abd2e6;
+    margin: 0;
+    padding: 0;
+}
 .stockHistory-item-container {
-    width: 100%
+    background-color: #ffffff;
+    padding: 0em;
+    align-self: center;
+    margin: auto;
+    width: 75%;
 }
 
 .stockHistory-item-container > * {
     width: 30%;
-    display: inline-block;
-    margin: 10px;
+    display: block;
+    margin: 1em;
 }

@@ -1,4 +1,4 @@
-.stockHistory-item {
+/* .stockHistory-item {
     padding: 10px;
     background-color: steelblue;
     color: white;
@@ -23,4 +23,43 @@
 .stockHistory-item .caption-normal {
     clear: both;
 }
+ */
 
+ .column {
+    vertical-align: middle;
+    font-size: 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+    padding: 0.5em 0em;
+  }
+  
+  .stockHistory-item{
+    max-height: 50px;
+    height: 100%;
+    width: 310%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #ffffff;
+    border-bottom: 0.2px solid #ccc;
+    margin-bottom: 0;
+  }
+
+  a {
+    font-size: 0.8em;
+    vertical-align: middle;
+  }
+
+  h2 {
+    margin: 0;
+  }
+  .stockHistory-item:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  button {
+    margin: 0;
+    padding: 0;
+  }

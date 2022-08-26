@@ -1,9 +1,18 @@
+html {
+    background-color: #abd2e6;
+    margin: 0;
+    padding: 0;
+}
 .stock-item-container {
-    width: 100%
+    background-color: #ffffff;
+    padding: 0em;
+    align-self: center;
+    margin: auto;
+    width: 75%;
 }
 
 .stock-item-container > * {
     width: 30%;
     display: block;
-    margin: 10px;
+    margin: 1em;
 }

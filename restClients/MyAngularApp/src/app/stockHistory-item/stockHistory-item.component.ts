@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { timestamp } from 'rxjs';
 import { StockHistory } from '../stockHistory'
 import { StockHistoryService } from '../stockHistory.service';
 
@@ -14,7 +15,7 @@ export class StockHistoryItemComponent implements OnInit {
   imageUrl!: string;
 
   constructor(private stockHistoryService: StockHistoryService) {}
-
+  
 
   ngOnInit() {
 
@@ -24,8 +25,10 @@ export class StockHistoryItemComponent implements OnInit {
 
    // update the is_sold --> selling
    update(sh: StockHistory) {
-    let new_sh: StockHistory = new StockHistory(sh.id, sh.ticker, sh.price, sh.amount, 1, new Date())
-    let new_sh_2: StockHistory = new StockHistory(100-sh.id, sh.ticker, sh.price, sh.amount, 1, new Date())
+    let timestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    let new_sh: StockHistory = new StockHistory(sh.id, sh.ticker, sh.price, sh.amount, 1, timestamp)
+    let new_sh_2: StockHistory = new StockHistory(100-sh.id, sh.ticker, sh.price, sh.amount, 2, timestamp)
+    console.log(new Date());
     this.stockHistoryService.putStockToHistory(new_sh);
     this.stockHistoryService.postStockToHistory(new_sh_2);
     window.location.reload();
@@ -33,6 +36,20 @@ export class StockHistoryItemComponent implements OnInit {
 
   isSold(is_sold: number) {
     if(is_sold == 0) {
+      return true
+    } 
+    return false
+  }
+
+  isSoldString(is_sold: number) {
+    if(is_sold == 2) {
+      return true
+    } 
+    return false
+  }
+
+  isBoughtString(is_sold: number) {
+    if(is_sold == 1) {
       return true
     } 
     return false

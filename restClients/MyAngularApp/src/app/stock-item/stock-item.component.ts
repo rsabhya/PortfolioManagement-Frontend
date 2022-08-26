@@ -24,7 +24,8 @@ export class StockItemComponent implements OnInit {
 
    // Remove the item with the specified id.
    remove(stock: Stock) {
-    let sh: StockHistory = new StockHistory(stock.id, stock.ticker, stock.price, stock.amount, 0, new Date())
+    let timestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    let sh: StockHistory = new StockHistory(stock.id, stock.ticker, stock.price, stock.amount, 0,timestamp)
     this.stockService.deleteStock(stock.id);
     console.log(new Date());
     this.stockHistoryService.putStockToHistory(sh);

@@ -1,4 +1,4 @@
-<div class="stockHistory-item">
+<!-- <div class="stockHistory-item">
   
     <div>
         <h2>
@@ -10,13 +10,37 @@
             </span>
         </h2>
     </div>
-    <div class="caption-normal">Date: {{ stockHistory.transaction_date }}</div>
     <div class="caption-normal">Amount: {{ stockHistory.amount }}</div>
     <div class="caption-normal"> 
         <div>
             <button (click)="update(stockHistory)" *ngIf="isSold(stockHistory.is_sold)">SELL</button>
         </div>
-</div>
 
-</div>
+        <div *ngIf="isBoughtString(stockHistory.is_sold)">BOUGHT </div>
+        <div *ngIf="isSoldString(stockHistory.is_sold)">SOLD
+        </div>
+</div> -->
 
+<div class="stockHistory-item">
+    <div class="column">
+        <h2>
+            <a class="caption-left" [routerLink]="['/stockHistoryDetail', stockHistory.id]">
+                {{ stockHistory.ticker }}
+            </a>
+        </h2>
+    </div>
+    <div class="column">
+        {{ stockHistory.price | currency:'USD':'symbol'}}
+    </div>
+    <div class="column">
+        Amount: {{ stockHistory.amount }}
+    </div>
+    <div class="column">
+        <div>
+            <button (click)="update(stockHistory)" *ngIf="isSold(stockHistory.is_sold)">SELL</button>
+        </div>
+
+        <div *ngIf="isBoughtString(stockHistory.is_sold)">BOUGHT </div>
+        <div *ngIf="isSoldString(stockHistory.is_sold)">SOLD
+    </div>
+  </div>
